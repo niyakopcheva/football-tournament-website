@@ -1,36 +1,30 @@
-import fs from 'fs'
-import path from 'path';
-
-export const csvFilePath = (fileName) => {
-    return path.join('./src/data/csv_files', fileName);
-} 
-
-export function parseCSV(content) {
-    const rows = content.split('\n').filter(row => row.trim() !== '');
-    const headers = rows[0].split(',');
-    const data = rows.slice(1).map(row => {
-        const values = row.split(',');
-        const obj = {};
-        headers.forEach((header, index) => {
-            obj[header.trim()] = values[index].trim();  
-        });
+export const parseCSVFile = async (csvFilePath) => {
+    try {
+      const response = await fetch(csvFilePath);
+      if (!response.ok) {
+        throw new Error('Failed to fetch the CSV file');
+      }
+  
+      const csvText = await response.text();
+      return parseCSV(csvText);
+    } catch (error) {
+      console.error('Error fetching and parsing CSV:', error);
+      return [];
+    }
+  };
+  
+  // Helper function to parse CSV text into an array of objects
+  const parseCSV = (csvText) => {
+    const rows = csvText.split('\n').filter(row => row.trim() !== '');
+    const headers = rows[0].split(',').map(header => header.trim());
+    return rows.slice(1).map(row => {
+      const values = row.split(',').map(value => value.trim());
+      return headers.reduce((obj, header, index) => {
+        obj[header] = values[index];
         return obj;
+      }, {});
     });
-
-    return data;
-}
-
-export function readCSVFile(filePath) {
-    fs.readFile(filePath, 'utf8', (err, fileContent) => {
-        if (err) {
-            console.error('Error reading the file:', err);
-            return;
-        }
-
-        const data = parseCSV(fileContent);
-        console.log(data);
-    });
-}
+  };
 
 
 

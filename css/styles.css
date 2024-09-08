@@ -21,7 +21,7 @@ h1 {
 .navbar>ul{
     display: flex;
     justify-content: space-around;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     align-items: center;
 }
@@ -35,4 +35,22 @@ h1 {
 
 .navbar>ul>li>a>img{
     max-width: 3rem;
+}
+
+.container {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.team-bracket {
+    display: flex;
+    gap: 20px;
+    border: solid 1px black;
+    justify-content: space-between;
+}
+
+.team-name, .score{
+    padding: 6px;
+    border: solid 1px black;
 }
