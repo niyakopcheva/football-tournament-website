@@ -4,6 +4,9 @@ import Home from './components/Home';
 import MatchDetails from './components/MatchDetails';
 import TeamDetails from './components/TeamDetails';
 
+import '../css/reset.css'
+import '../css/styles.css'
+
 
 function App() {
 
