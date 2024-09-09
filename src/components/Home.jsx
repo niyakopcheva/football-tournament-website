@@ -1,7 +1,6 @@
 
 import Navbar from "./Navbar";
 import Bracket from "./Bracket"
-import { parseCSVFile } from "../services/csvParser";
 
 export default function Home() {
     
