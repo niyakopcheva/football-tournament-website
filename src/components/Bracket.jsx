@@ -1,60 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { parseCSVFile } from "../services/csvParser";
-import getTeamName from '../queries/getTeamName';
+
+import StageBracket from './StageBracket';
 
 export default function Bracket() {
-    const [matches, setMatches] = useState([]);
-    const [teams, setTeams] = useState([]);
-
-    useEffect(() => {
-      // Fetch matches data
-      const fetchMatches = async () => {
-          try {
-              const matchesData = await parseCSVFile('/csv_files/matches.csv');
-              setMatches(matchesData);
-          } catch (error) {
-              console.error('Error fetching matches:', error);
-          }
-      };
-
-      // Fetch teams data
-      const fetchTeams = async () => {
-          try {
-              const teamsData = await parseCSVFile('/csv_files/teams.csv'); // Assuming team data is in a separate file
-              setTeams(teamsData);
-          } catch (error) {
-              console.error('Error fetching teams:', error);
-          }
-      };
-
-      fetchMatches();
-      fetchTeams();
-  }, []);
 
   return (
-    <>
-      {matches.length > 0 ? (
-        matches.map((match, i) => {
-          const scores = match.Score.split('-');
-          return (
-            <div className="container">
-                <div className="team" key={i}>
-                  <div className="team-bracket">
-                      <div className="team-name">{getTeamName(teams, match.ATeamID)}</div>
-                      <div className="score">{scores[0]}</div>
-                  </div>
-                  <div className="team-bracket">
-                      <div className="team-name">{getTeamName(teams, match.BTeamID)}</div>
-                      <div className="score">{scores[1]}</div>
-                  </div>
-                </div>
-            </div>
-            
-          );
-        })
-      ) : (
-        <div>Loading...</div> 
-      )}
-    </>
+    <div className="container-stage-brackets">
+      <StageBracket title="Round of 16"/>
+      <StageBracket title="Quarter-finals"/>
+      <StageBracket title="Semi-finals"/>
+      <StageBracket title="Final"/>
+    </div>
   );
 }

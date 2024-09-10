@@ -13,11 +13,11 @@ function App() {
   return (
     <>
     <Router>
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/match' element={<MatchDetails />} />
-      <Route path='/team' element={<TeamDetails />} />
-      </Routes>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/matches' element={<MatchDetails />} />
+        <Route path='/teams/:teamID' element={<TeamDetails />}/>
+        </Routes>
     </Router>
       
     </>

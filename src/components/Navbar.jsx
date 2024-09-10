@@ -4,9 +4,10 @@ export default function Navbar() {
             <div className="navbar">
                 <ul>
                     <li>
-                        <a href="/">
-                        <img src="/icons/futbol-solid.svg" alt="logo"/>
-                        Home</a>
+                        <a className="home" href="/">
+                        <img className="svg-icon" src="/icons/futbol-solid.svg" alt="logo"/>
+                        <span >Home</span>
+                        </a>
                         </li>
                     <li>
                         <a href="/match">Match Details</a>
