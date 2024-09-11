@@ -21,6 +21,19 @@ h2{
     text-align: center;
 }
 
+.primary-button{
+    border: none;
+    background-color: rgb(208, 208, 241);
+    padding: 4px 0px;
+    color: rgb(10, 10, 121);
+}
+
+.primary-button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
 .secondary-heading {
     color: rgb(10, 10, 121);
     font-size: 1.5rem;

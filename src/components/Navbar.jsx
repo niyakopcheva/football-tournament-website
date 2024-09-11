@@ -1,19 +1,18 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
     return (
         <>
             <div className="navbar">
                 <ul>
                     <li>
-                        <a className="home" href="/">
+                        <Link className="home" to="/">
                         <img className="svg-icon" src="/icons/futbol-solid.svg" alt="logo"/>
                         <span >Home</span>
-                        </a>
+                        </Link>
                         </li>
                     <li>
-                        <a href="/matches">Match Details</a>
-                        </li>
-                    <li>
-                        <a href="/teams">Teams</a>
+                        <Link to="/teams">Teams</Link>
                     </li>
                 </ul>
             </div>

@@ -13,7 +13,6 @@ export const parseCSVFile = async (csvFilePath) => {
     }
   };
   
-  // Function to parse CSV text into an array of objects
   const parseCSV = (csvText) => {
     const rows = csvText.split('\n').filter(row => row.trim() !== '');
     const headers = rows[0].split(',').map(header => header.trim());
