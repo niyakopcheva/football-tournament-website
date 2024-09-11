@@ -9,8 +9,8 @@ export default function Home() {
     return (
         <>
             <Navbar/>
-            <h1>Homepage</h1>
-            <h1>Bracket View</h1>
+            <h1>European Football Championship</h1>
+            <h1 className="secondary-heading">Bracket View</h1>
             <Bracket/>
         </>
     );

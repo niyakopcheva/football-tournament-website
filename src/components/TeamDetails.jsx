@@ -37,39 +37,42 @@ export default function TeamDetails() {
     return (
         <>
         <Navbar />
-        <h1>{
-            teamName
-            }</h1>
-        <table className="players">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Player</th>
-                    <th>Pos</th>
-                </tr>
-            </thead>
-            <tbody>
-                {players.length > 0 ? (
-                            players
-                                .filter((player) => 
-                                    player.TeamID === teamID
-                                )
-                                .map((player, i) => (
-                                    <PlayerDetails
-                                        key={i}
-                                        number={player.TeamNumber}
-                                        fullName={player.FullName}
-                                        position={player.Position}
-                                    />
-                                ))
-                                    
-                        ) : (
-                            <tr>
-                                <td colSpan="3">No players found.</td>
-                            </tr>
-                        )}
-            </tbody>
-        </table>
+        <div className="team-container">
+            <h1>{
+                teamName
+                }</h1>
+            <table className="players">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Player</th>
+                        <th>Pos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {players.length > 0 ? (
+                                players
+                                    .filter((player) => 
+                                        player.TeamID === teamID
+                                    )
+                                    .map((player, i) => (
+                                        <PlayerDetails
+                                            key={i}
+                                            number={player.TeamNumber}
+                                            fullName={player.FullName}
+                                            position={player.Position}
+                                        />
+                                    ))
+                                        
+                            ) : (
+                                <tr>
+                                    <td colSpan="3">No players found.</td>
+                                </tr>
+                            )}
+                </tbody>
+            </table>
+        </div>
+        
         </>
     
 
