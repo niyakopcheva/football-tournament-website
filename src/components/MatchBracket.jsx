@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import getTeamName from "../queries/getTeamName";
 
 export default function MatchBracket({match, teams, index}) {
-    
-
     const scores = match.Score.split('-');
+    const navigate = useNavigate();
+
+    const handleMatchDetailsClick = () => {
+        // Navigate to the MatchDetails page with the match ID
+        navigate(`/matches/${match.ID}`);
+      };
+
     return (
         <div className="container">
             <div className="team" key={index}>
@@ -16,7 +22,9 @@ export default function MatchBracket({match, teams, index}) {
                   <a href={`/teams/${match.BTeamID}`} className="team-name">{getTeamName(teams, match.BTeamID)}</a>
                   <span className="score">{scores[1]}</span>
               </div>
+              <button className="primary-button" onClick={handleMatchDetailsClick}>Match details</button>
             </div>
+            
         </div>
       );
 }

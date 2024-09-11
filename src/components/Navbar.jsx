@@ -10,10 +10,10 @@ export default function Navbar() {
                         </a>
                         </li>
                     <li>
-                        <a href="/match">Match Details</a>
+                        <a href="/matches">Match Details</a>
                         </li>
                     <li>
-                        <a href="/team">Team Details</a>
+                        <a href="/teams">Teams</a>
                     </li>
                 </ul>
             </div>

@@ -49,10 +49,10 @@ export default function StageBracket({title}) {
                             .slice(0, 8)
                             .map((match, i) => (
                                 <MatchBracket
-                                    key={i} // key prop for React's reconciliation
-                                    match={match} // pass match data
-                                    teams={teams} // pass list of teams
-                                    index={i} // optional index prop
+                                    key={i} 
+                                    match={match} 
+                                    teams={teams} 
+                                    index={i} 
                                 />
                             ))
                                 

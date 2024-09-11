@@ -4,8 +4,9 @@ import Home from './components/Home';
 import MatchDetails from './components/MatchDetails';
 import TeamDetails from './components/TeamDetails';
 
-import '../css/reset.css'
-import '../css/styles.css'
+import '../src/css/reset.css'
+import '../src/css/styles.css'
+import TeamsList from './components/TeamsList';
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/matches' element={<MatchDetails />} />
+        <Route path='/teams/' element={<TeamsList />}/>
         <Route path='/teams/:teamID' element={<TeamDetails />}/>
+        <Route path='/matches/:matchID' element={<MatchDetails />} />
         </Routes>
     </Router>
       

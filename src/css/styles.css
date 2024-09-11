@@ -126,19 +126,23 @@ h2{
     color:  rgb(16, 16, 184);
 }
 
-.team-container {
+.team-container, 
+.teams-container,
+.match-container,
+.formation{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px 20px;
 }
 
-.team-container>h1{
+.team-container>h1,
+.teams-container>h1{
     color: rgb(10, 10, 121);
     margin: 36px 0px;
 }
 
-.players {
+.players, .teams{
     font-weight: 800;
     width: 100%; /* Ensure table spans full container width */
     max-width: 900px; /* Optionally, set a max-width for the table */
@@ -158,7 +162,8 @@ h2{
     text-align: left; 
 }
 
-.players tbody tr:hover {
+.players tbody tr:hover,
+.teams tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.05); 
 }
 
@@ -173,6 +178,43 @@ h2{
     aspect-ratio: 1 / 1;
     font-size: 1rem;
 }
+
+.teams>tbody>tr>td{
+    padding: 6px 8px;
+    border-bottom: 1px solid rgb(151, 151, 151);
+    font-size: 1.3rem;
+    text-align: center; 
+}
+.match-result>.score{
+    width: auto;
+    font-size: 4rem;
+    font-weight: 1000;
+}
+
+.match-result>.team-name{
+    width: auto;
+}
+
+.match-result{
+    max-width: 700px;
+    font-size: 2.5rem;
+    display: grid;
+    justify-content: center;
+    grid-column-gap: 4rem;
+    column-gap: 3rem;
+    grid-row-gap: 0;
+    row-gap: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(5rem, auto) minmax(0, 1fr);
+    align-items: center;
+}
+
+.formation-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 24px;
+    margin-bottom: 160px;
+}
+
 
 @media (max-width: 1185px) and (min-width: 891px) {
     .container-stage-brackets {
@@ -227,4 +269,35 @@ h2{
     .svg-icon{
         width: 3rem;
     }
+
+    .formation-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 7rem;
+        justify-items: center;
+        
+    }
+
+    .formation-container .formation{
+        width: 160%;
+    }
+    
 }
+
+@media (max-width: 740px){
+    .match-container{
+        width: 100vw;
+        padding: 0;
+    }
+    .match-result{
+        max-width: 350px;
+        column-gap: 0rem;
+        font-size: 1.2rem;
+    }
+
+    .match-result>.score{
+        font-size: 2rem;
+    }
+}
+
