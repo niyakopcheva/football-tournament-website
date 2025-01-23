@@ -13,6 +13,8 @@ Web application visualizing the matches and results from the European Football C
 
 ### 2. Homepage
 - The homepage presents a bracket view of the tournament matches.
+  ![image](https://github.com/user-attachments/assets/d9d48f4d-e08c-417d-8f2d-71484442b380)
+
 1. Created a `Bracket` component.
 2. Inside the `Bracket` component, `StageBrackets` are used for each tournament stage.
 3. `StageBrackets` fetch matches and teams, then filter matches after the group stage (ending on 6/26/2024).  
