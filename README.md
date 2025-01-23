@@ -1,25 +1,35 @@
-# football-tournament-website
- Web application that visualizes the matches and results from the European Football Championship. 
+# Football Tournament Website
 
- # Tasks:
+Web application visualizing the matches and results from the European Football Championship.
 
- ## 1.Parsing data from csv files
-    Created a js function called csvParser. The function receives an argument of the path to the file and fetches it. If the fetch succeeds, the parseCSV function creates an array of objects from the data from the response of the fetch using string manipulation and returns it. 
+---
 
- ## 2.Homepage
-    The homepage presents a bracket view of the matches of the tournament.
-    1. Created a Bracket component.
-    2. Inside the Bracket component are StageBrackets for every stage of the tournament, for easier visualization.
-    3. Every StageBracket fetches the matches and the teams and filters the matches after the group stage, which ends on 6/26/2024. After that, based on the prop title, passed to the StageBracket component, displays the matches from that stage.
-    4. The function getTeamName uses the array of teams and the TeamID props to return the name of the team.
+## Tasks
 
-## 3.Match Details
-    1. Displays the names of the teams and the score.
-    2. Using the TeamFormation component display the formation of the teams, filters which players from the team played from the beginning of the match(fromMinutes === '0') and display their names above the positions.
+### 1. Parsing Data from CSV Files
+- Created a `csvParser` function in JavaScript.
+- The function receives the path to the CSV file and fetches its data.
+- If the fetch succeeds, `csvParser` uses string manipulation to convert the CSV data into an array of objects and returns it.
 
-## 4.Team Details
-    1.Based on the id parsed as a prop from the url, fetch the players from that team and display their numbers, names and positions.
+### 2. Homepage
+- The homepage presents a bracket view of the tournament matches.
+1. Created a `Bracket` component.
+2. Inside the `Bracket` component, `StageBrackets` are used for each tournament stage.
+3. `StageBrackets` fetch matches and teams, then filter matches after the group stage (ending on 6/26/2024).  
+   Based on the `title` prop passed to `StageBracket`, matches from that stage are displayed.
+4. `getTeamName` function retrieves team names using the teams array and the `TeamID` prop.
 
-# Technologies 
-    - React Router
-    
+### 3. Match Details
+1. Displays team names and scores.
+2. Uses the `TeamFormation` component to show team formations.  
+   Filters players who started the match (`fromMinutes === '0'`) and displays their names above their positions.
+
+### 4. Team Details
+1. Based on the `id` prop from the URL, fetches the team's players.
+2. Displays player numbers, names, and positions.
+
+---
+
+## Technologies
+- React Router
+

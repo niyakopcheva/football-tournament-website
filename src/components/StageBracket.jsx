@@ -77,7 +77,7 @@ export default function StageBracket({title}) {
                                 const lastGroupDate = new Date('2024-06-26');
                                 return matchDate > lastGroupDate;
                             })
-                            .slice(9, 13)
+                            .slice(8, 12)
                             .map((match, i) => (
                                 <MatchBracket
                                     key={i} // key prop for React's reconciliation
