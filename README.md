@@ -19,7 +19,7 @@ Web application visualizing the matches and results from the European Football C
    Based on the `title` prop passed to `StageBracket`, matches from that stage are displayed.
 4. `getTeamName` function retrieves team names using the teams array and the `TeamID` prop.
 
-  ![image](https://github.com/user-attachments/assets/d9d48f4d-e08c-417d-8f2d-71484442b380)
+  ![image](https://github.com/user-attachments/assets/d1f3b506-b739-4d41-ab3e-69e4b5b3c954)
 
 ### 3. Match Details
 1. Displays team names and scores.
